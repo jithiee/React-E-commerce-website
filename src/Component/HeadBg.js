@@ -75,19 +75,12 @@ const HeadBg = () => {
 
 
 )}
+
 </Container>
+<p>Please order</p>
 
 
-
-
-
-
-
-
-
-
-
-  </div>
+</div>
 
 
 
