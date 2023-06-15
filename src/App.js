@@ -22,7 +22,7 @@ import AddProduct from "./Component/AdminSetion/AddProduct";
 import AdminEdit from "./Component/AdminSetion/AdminEdit";
 import UserDetiles from "./Component/AdminSetion/UserDetiles";
 import Search from "./Component/Navigation/Search";
-import PhotoViewer from "./Component/Photoviewer";
+
 
 function App() {
   const location = useLocation();
