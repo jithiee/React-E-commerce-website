@@ -52,39 +52,50 @@ const HeadBg = () => {
 
       <div
 
-        style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontFamily: 'cursive' }} >
+        style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontFamily: 'cursive', }} >
 
-        <Button className='btn1 w-25 fw-bold' variant="outline-dark" onClick={() => navigate('/men')}  >SHOP MEN</Button>{' '}
+        <Button  className='btn1 w-25 fw-bold   ' variant="outline-dark" onClick={() => navigate('/men')}  >SHOP MEN</Button>{' '}
         <Button className='btn2 w-25 fw-bold' variant="outline-dark" onClick={() => navigate('/women')} >SHOP WOMEN</Button>{' '}
       </div> <br></br>
       <p style={{ fontSize: '50px', fontFamily: 'cursive', fontWeight: 'bold' }}  >New Arrivals</p> <br />
+    
+      <div className='image-container'>
+  <img  src='https://cdn.shopify.com/s/files/1/2428/5565/files/MG_7914e_1024x1024.jpg?v=1681900598' />
+</div>
 
    
-
+ 
   <div>
 
   <Container className='pb-5 '   >
 
 {datas.map((item) =>
-  <Card className='  w-25  mt-5 d-inline-block shadow   ' key={item.id}  >
+  <Card className='  w-25  mt-5 d-inline-block shadow  ' key={item.id}  >
     <Card.Img  className='men' variant="top"  style={{cursor:'pointer'}} onClick={() => navigate(`/viewpdct/${item.id} `)}  src={item.image} />
     <Card.Body>
       <Card.Title>{item.ProductName}</Card.Title>
       <Card.Text>${item.price} </Card.Text>
-      <Button variant="primary" onClick={() => navigate(`/viewpdct/${item.id} `)} >View product</Button>
+      {/* <Button variant="primary" onClick={() => navigate(`/viewpdct/${item.id} `)} >View product</Button> */}
+      <Button   style={{fontFamily:'cursive'}}  className='btn1  fw-bold    ' variant="outline-dark" onClick={() => navigate(`/viewpdct/${item.id} `)} >View product</Button>
     </Card.Body>
     
   </Card>
-
+   
 
 )}
 
 </Container>
-
+ <div className='hgadimg '> 
+<img src='https://cdn.shopify.com/s/files/1/2428/5565/collections/Frame_2531_1024x1024.png?v=1686572947' />
+ <img src='https://cdn.shopify.com/s/files/1/2428/5565/collections/ND_-_New_Website_-_Banner_Image_DF_-_Natural_Rubber_3_625602e1-0564-4d84-9bb9-6af860db8ee1_1024x1024.jpg?v=1686573096' />
+ <img className='mb-5' src='https://cdn.shopify.com/s/files/1/2428/5565/collections/r6116_f886a34e-0714-43ee-aa9d-20658629857b_1024x1024_1_1024x1024.png?v=1686572831' />
+ </div>
+  
+ <div className='vid1 container'>
+ <iframe width="100%" height="100%" src="https://www.youtube.com/embed/geFi-ZpN2ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ </div>
 
 </div>
-
-
 
 
 

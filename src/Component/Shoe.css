@@ -59,6 +59,68 @@ font-family: cursive;
     border-radius: 4px;
     cursor: pointer;
   }
+  .btn1:hover{
+    background-color:#ff007f;
+  }
+  .btn2:hover{
+    background-color:#ff007f;
+  }
+  .image-container{
+    max-width: 100%;
+    height: auto;
+    
+  }
+  .image-container img{
+    width: 80%;
+    height: auto;
+  }
+.hgadimg{
+  max-width: 100%;
+  height: auto;
+}
+.hgadimg img{
+  max-width: 100%;
+  height: auto;
+}
+.navers:hover{
+  background-color: #8DB255;
+  border-radius: 10px;
+  color: azure;
+  font-family: cursive;
+  
+
+
+
+}
+.navers:active{
+  background-color: #4CAF50;
+  
+
+}
+.navers{
+ 
+  font-weight: bold;
+
+}
+.place::placeholder{
+  color: #4CAF50;
+  font-family: cursive;
+  opacity: .6;
+
+
+} 
+.srch:hover{
+  background-color: #E07EA7;
+
+}
+.vid1 {
+  width: 90%;
+  height: 580px;
+  margin-bottom: 100px;
+ margin-top: 50px;
+
+}
+
 
 
 

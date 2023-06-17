@@ -23,11 +23,11 @@ const NavBars = () => {
 
   return (
     <>
-      <div className="navbaar   mt-3" style={{ position: "sticky" }}>
-        <Navbar bg="light" expand="lg">
+      <div className="navbaar   " style={{ position: "sticky",backgroundColor:' #F8EAED' }}>
+        <Navbar  expand="lg">
           <Container>
             <Navbar.Brand
-              className="icon fw-bold fs-2   "
+              className="logo icon fw-bold fs-2   "
               style={{ cursor: "pointer" }}
               onClick={() => navigate("/")}
             >
@@ -40,24 +40,25 @@ const NavBars = () => {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link onClick={() => navigate("/men")}>MEN</Nav.Link>
-                <Nav.Link onClick={() => navigate("/women")}>WOMEN</Nav.Link>
-                <Nav.Link onClick={() => navigate("/collection")}>COLLECTION</Nav.Link>
+                <Nav.Link  className="navers"  onClick={() => navigate("/men") }  >MEN</Nav.Link>
+                <Nav.Link className="navers"  onClick={() => navigate("/women")}>WOMEN</Nav.Link>
+                <Nav.Link  className="navers"  onClick={() => navigate("/collection")}>COLLECTION</Nav.Link>
               </Nav>
 
               <Nav style={{ display: "flex", gap: "30px" }}>
-                <Form className="d-flex  p-4 ">
+                <Form className=" d-flex  p-4 ">
                   <Form.Control
+                  
                     type="search"
-                    placeholder="Search"
-                    className="me-2"
+                    placeholder="Search brands"
+                    className="place me-2"
                     aria-label="Search"
                     onChange={SearchHandler}
                   />
 
                   <NavLink exact to="/search">
                     {" "}
-                    <Button variant="outline-dark">Search</Button>
+                    <Button className="srch" variant="outline-dark">Search</Button>
                   </NavLink>
                 </Form>
               </Nav>

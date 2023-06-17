@@ -28,7 +28,8 @@ const Collection = () => {
     <Card.Body>
       <Card.Title>{item.ProductName}</Card.Title>
       <Card.Text>${item.price} </Card.Text>
-      <Button variant="primary" onClick={() => navigate(`/viewpdct/${item.id} `)} >View product</Button>
+      {/* <Button variant="primary" onClick={() => navigate(`/viewpdct/${item.id} `)} >View product</Button> */}
+      <Button   style={{fontFamily:'cursive'}}   className='btn1  fw-bold    ' variant="outline-dark"   onClick={() => navigate(`/viewpdct/${item.id} `)}   >View product</Button>
     </Card.Body>
   </Card>
 
