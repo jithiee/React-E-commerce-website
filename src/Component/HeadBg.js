@@ -15,7 +15,9 @@ const HeadBg = () => {
 
   const {state }=useContext(context)
   const  datas = state.filter((item)=>(item.Gender === "Newarrawel"))
-  // console.log(datas);
+  // console.log(datas)
+
+
 
   return (
     <>
@@ -71,17 +73,13 @@ const HeadBg = () => {
       <Card.Text>${item.price} </Card.Text>
       <Button variant="primary" onClick={() => navigate(`/viewpdct/${item.id} `)} >View product</Button>
     </Card.Body>
+    
   </Card>
 
 
 )}
 
 </Container>
-<div className='Container' >
-  <img className='w-25 h-25 mb-3 img-fluid ' src='https://images.pexels.com/photos/8933066/pexels-photo-8933066.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=699.825&fit=crop&h=1133.05' />
-  <img className='img-fluid ms-3  w-25 h-25 '  src='https://images.pexels.com/photos/12511453/pexels-photo-12511453.jpeg?auto=compress&cs=tinysrgb&h=566.525&fit=crop&w=633.175&dpr=1' /> <br></br>
-   <img className='img-fluid ms-3 w-25 h-25 mb-5 '  src='https://images.pexels.com/photos/12484292/pexels-photo-12484292.jpeg?auto=compress&cs=tinysrgb&h=566.525&fit=crop&w=633.175&dpr=1' />
-</div>
 
 
 </div>

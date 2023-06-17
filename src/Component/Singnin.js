@@ -151,7 +151,7 @@ const Singnin = () => {
             <nav>
               <label>
                 Already have an account . . .?
-                <Nav.Link
+                <Nav.Link 
                   style={{ color: "blue" }}
                   onClick={() => navigate("/login")}
                 >
