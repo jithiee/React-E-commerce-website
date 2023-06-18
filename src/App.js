@@ -25,6 +25,7 @@ import Search from "./Component/Navigation/Search";
 import About from "./Component/Navigation/About";
 
 
+
 function App() {
   const location = useLocation();
   const imageUrl = 'path/to/your/image.jpg'
