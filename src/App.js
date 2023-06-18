@@ -22,6 +22,7 @@ import AddProduct from "./Component/AdminSetion/AddProduct";
 import AdminEdit from "./Component/AdminSetion/AdminEdit";
 import UserDetiles from "./Component/AdminSetion/UserDetiles";
 import Search from "./Component/Navigation/Search";
+import About from "./Component/Navigation/About";
 
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
             <Route path="/men" element={<Men />} />
             <Route path="/Women" element={<Women />} />
             <Route path="/collection" element={<Collecion />} />
+            <Route path="/about" element={<About/>} />
             <Route path="/imuser" element={<ImUser />} />
             <Route path="/cart" element={<GiShoppingCart />} />
             <Route path="/viewpdct/:id" element={<ViewPdct />} />

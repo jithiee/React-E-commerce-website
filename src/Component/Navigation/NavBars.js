@@ -43,6 +43,8 @@ const NavBars = () => {
                 <Nav.Link  className="navers"  onClick={() => navigate("/men") }  >MEN</Nav.Link>
                 <Nav.Link className="navers"  onClick={() => navigate("/women")}>WOMEN</Nav.Link>
                 <Nav.Link  className="navers"  onClick={() => navigate("/collection")}>COLLECTION</Nav.Link>
+                <Nav.Link  className="navers"  onClick={() => navigate("/About")}>ABOUT US</Nav.Link>
+               
               </Nav>
 
               <Nav style={{ display: "flex", gap: "30px" }}>
