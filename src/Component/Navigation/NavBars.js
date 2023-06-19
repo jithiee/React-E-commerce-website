@@ -88,7 +88,7 @@ const NavBars = () => {
                 >
                   SignUp
                 </CDBBtn>
-                <CDBBtn color="primary" onClick={() => navigate("/")}>
+                <CDBBtn color="primary" onClick={() => navigate("/login")}>
                   LogOut
                 </CDBBtn>
 
