@@ -91,13 +91,7 @@ const NavBars = () => {
                 <CDBBtn color="primary" onClick={() => navigate("/")}>
                   LogOut
                 </CDBBtn>
-                <Nav.Link
-                  className="fs-3 "
-                  style={{ gap: "10px" }}
-                  onClick={() => navigate("/admin/adminEdit")}
-                >
-                  <MdAdminPanelSettings />
-                </Nav.Link>
+
               </div>
             </Navbar.Collapse>
           </Container>
