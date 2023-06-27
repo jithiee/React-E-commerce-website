@@ -90,10 +90,6 @@ const HeadBg = () => {
  <img src='https://cdn.shopify.com/s/files/1/2428/5565/collections/ND_-_New_Website_-_Banner_Image_DF_-_Natural_Rubber_3_625602e1-0564-4d84-9bb9-6af860db8ee1_1024x1024.jpg?v=1686573096' />
  <img className='mb-5' src='https://cdn.shopify.com/s/files/1/2428/5565/collections/r6116_f886a34e-0714-43ee-aa9d-20658629857b_1024x1024_1_1024x1024.png?v=1686572831' />
  </div>
-  
- <div className='vid1 container'>
- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/geFi-ZpN2ZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
- </div>
 
 </div>
 
