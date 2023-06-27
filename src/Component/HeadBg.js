@@ -57,7 +57,7 @@ const HeadBg = () => {
         <Button  className='btn1 w-25 fw-bold   ' variant="outline-dark" onClick={() => navigate('/men')}  >SHOP MEN</Button>{' '}
         <Button className='btn2 w-25 fw-bold' variant="outline-dark" onClick={() => navigate('/women')} >SHOP WOMEN</Button>{' '}
       </div> <br></br>
-      <p style={{ fontSize: '50px', fontFamily: 'cursive', fontWeight: 'bold' }}  >New Arrivals</p> <br />
+      <p style={{ color:'#F7CA18'  ,fontFamily: 'cursive', fontWeight: 'bold',  fontSize:'2.9rem', textShadow: '1px 1px 0 #fff, 0 0 9px #000' }}  >New Arrivals</p> <br />
     
 
 
