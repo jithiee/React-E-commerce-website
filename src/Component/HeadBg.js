@@ -59,7 +59,10 @@ const HeadBg = () => {
       </div> <br></br>
       <p style={{ fontSize: '50px', fontFamily: 'cursive', fontWeight: 'bold' }}  >New Arrivals</p> <br />
     
-      <div className='image-container'>
+
+
+
+      <div className='image-container mt-5'>
   <img  src='https://cdn.shopify.com/s/files/1/2428/5565/files/MG_7914e_1024x1024.jpg?v=1681900598' />
 </div>
 
