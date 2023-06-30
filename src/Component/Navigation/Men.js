@@ -27,8 +27,8 @@ const Men = () => {
       <Container className='pb-5 '   >
 
         {datas.map((item) =>
-          <Card className='  w-25  mt-5 d-inline-block shadow   ' key={item.id}  >
-            <Card.Img  className='men' variant="top"  style={{cursor:'pointer'}} onClick={() => navigate(`/viewpdct/${item.id} `)}  src={item.image} />
+          <Card className=' ms-2 mt-5 d-inline-block shadow   ' style={{width:"16%",  }} key={item.id}  >
+            <Card.Img  className='men ' variant="top"  style={{cursor:'pointer'}} onClick={() => navigate(`/viewpdct/${item.id} `)}  src={item.image} />
             <Card.Body>
               <Card.Title>{item.ProductName}</Card.Title>
               <Card.Text>${item.price} </Card.Text>

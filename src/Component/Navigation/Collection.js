@@ -23,7 +23,7 @@ const Collection = () => {
           <Container className='pb-5' >
 
 {state.map((item) =>
-  <Card className='  w-25  mt-5 d-inline-block shadow  ' key={item.id}  >
+  <Card className=' ms-2 mt-5 d-inline-block shadow   ' style={{width:"16%",  }}key={item.id}  >
     <Card.Img  className='menadd ' variant="top" style={{cursor:'pointer'}}   onClick={() => navigate(`/viewpdct/${item.id} `)} src={item.image} />
     <Card.Body>
       <Card.Title>{item.ProductName}</Card.Title>
