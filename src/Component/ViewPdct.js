@@ -4,6 +4,7 @@ import { context } from './Context'
 import { useContext } from 'react'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import {MdShoppingCartCheckout} from 'react-icons/md'
 
 
 
@@ -17,7 +18,7 @@ function ViewPdct() {
 const handleAddtocart = () => {
      if (auth === true) {
       const [goods] = newCart
-       const cartProduct = cart.filter((item) => item.id === goods.id)
+       const cartProduct = cart.filter((item) => item.id === goods.id) 
    
        if(cartProduct.length > 0){
          alert("product Alredy in the cart")
@@ -45,7 +46,7 @@ const handleAddtocart = () => {
         <Card.Body>
           <Card.Title>{cart.ProductName}</Card.Title>
           <Card.Text>${cart.price} </Card.Text>
-          <Button id={cart.id} onClick={handleAddtocart} > Add To Cart </Button>
+          <Button style={{fontFamily:'cursive',backgroundColor:'#2C73D2',}} id={cart.id} onClick={handleAddtocart} >< MdShoppingCartCheckout/> Add To Cart </Button>
         </Card.Body>
       </Card>
         )
