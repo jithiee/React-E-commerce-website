@@ -46,7 +46,7 @@ const handleAddtocart = () => {
         <Card.Body>
           <Card.Title>{cart.ProductName}</Card.Title>
           <Card.Text>${cart.price} </Card.Text>
-          <Button style={{fontFamily:'cursive',backgroundColor:'#2C73D2',}} id={cart.id} onClick={handleAddtocart} >< MdShoppingCartCheckout/> Add To Cart </Button>
+          <Button className='cartbtn' style={{fontFamily:'cursive',backgroundColor:'#2C73D2',}} id={cart.id} onClick={handleAddtocart} >< MdShoppingCartCheckout/> Add To Cart </Button>
         </Card.Body>
       </Card>
         )

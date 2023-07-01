@@ -126,6 +126,10 @@ font-family: cursive;
   max-width: 100%;
     height: auto;
 }
+.cartbtn:hover{
+border: 5px solid greenyellow;
+border-radius: 5px;
+}
 
 
 
