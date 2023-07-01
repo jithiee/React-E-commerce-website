@@ -41,12 +41,12 @@ const handleAddtocart = () => {
     <div className='pb-5' >
       {newCart.map((cart)=>
     
-      <Card className='w-25 mt-5 d-inline-block shadow   ' key={cart.id}  >
+      <Card className='w-25  mt-5 d-inline-block shadow   ' key={cart.id}  >
         <Card.Img variant="top" src={cart.image} />
         <Card.Body>
           <Card.Title>{cart.ProductName}</Card.Title>
           <Card.Text>${cart.price} </Card.Text>
-          <Button className='cartbtn' style={{fontFamily:'cursive',backgroundColor:'#2C73D2',}} id={cart.id} onClick={handleAddtocart} >< MdShoppingCartCheckout/> Add To Cart </Button>
+          <Button className='cartbtn shadow' style={{fontFamily:'cursive',backgroundColor:'#2C73D2',}} id={cart.id} onClick={handleAddtocart} >< MdShoppingCartCheckout/> Add To Cart </Button>
         </Card.Body>
       </Card>
         )
