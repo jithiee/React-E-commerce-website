@@ -73,7 +73,8 @@ const HeadBg = () => {
   <Container className='pb-5 '   >
 
 {datas.map((item) =>
-  <Card className='  w-25  mt-5 d-inline-block shadow  ' key={item.id}  >
+
+  <Card className='   mt-5 d-inline-block shadow  ' style={{width:'16%',marginLeft:'8px'}} key={item.id}  >
     <Card.Img  className='men' variant="top"  style={{cursor:'pointer'}} onClick={() => navigate(`/viewpdct/${item.id} `)}  src={item.image} />
     <Card.Body>
       <Card.Title>{item.ProductName}</Card.Title>

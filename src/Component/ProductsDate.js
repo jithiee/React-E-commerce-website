@@ -10,7 +10,7 @@ import React from "react";
  },
     {
     id:2,
-    ProductName:'Men’s Classic Blue',
+    ProductName:'Men’s Classic Mint Blue',
     price:'69',
     image:'https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-019-600x600.jpg',
     Gender:'male',
@@ -18,7 +18,7 @@ import React from "react";
  },
     {
     id:3,
-    ProductName:'Men’s Classic Mint',
+    ProductName:'Men’s Classic Mint Green',
     price:'90',
     image:'https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-020-600x600.jpg',
     Gender:'male',
@@ -163,7 +163,7 @@ import React from "react";
  },
     {
     id:21,
-    ProductName:'black dragon Force  ',
+    ProductName:'Black Dragon Force  ',
     price:'799',
     image:'https://images.thecustommovement.com/640x640/public/296bdc11-af36-4c96-8877-c4453fc0743c',
     Gender:'Newarrawel',
