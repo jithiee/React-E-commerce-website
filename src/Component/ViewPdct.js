@@ -23,8 +23,10 @@ const handleAddtocart = () => {
        if(cartProduct.length > 0){
          alert("product Alredy in the cart")
         }else {
+          document.getElementById("cartButton").style.display = "none";
           const [goods] = newCart
           setCart((prevState )=> [...prevState , goods]);
+          document.getElementById("cartImage").style.display = "block";
           alert('Successfully Added To Cart')
           
         }
@@ -42,11 +44,13 @@ const handleAddtocart = () => {
       {newCart.map((cart)=>
     
       <Card className='w-25  mt-5 d-inline-block shadow   ' key={cart.id}  >
-        <Card.Img variant="top" src={cart.image} />
+        <Card.Img className='image-container' variant="top" src={cart.image} />
         <Card.Body>
           <Card.Title>{cart.ProductName}</Card.Title>
           <Card.Text>${cart.price} </Card.Text>
-          <Button className='cartbtn shadow' style={{fontFamily:'cursive',backgroundColor:'#2C73D2',}} id={cart.id} onClick={handleAddtocart} >< MdShoppingCartCheckout/> Add To Cart </Button>
+           <Button className='cartbtn shadow' style={{fontFamily:'cursive',backgroundColor:'#2C73D2',}} id={cart.id} onClick={handleAddtocart} >< MdShoppingCartCheckout/> Add To Cart </Button>
+        
+        
         </Card.Body>
       </Card>
         )
