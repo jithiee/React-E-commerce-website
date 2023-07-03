@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { context } from './Context';
+import Rating from './Rating';
 
 
 
@@ -79,6 +80,7 @@ const HeadBg = () => {
     <Card.Body>
       <Card.Title>{item.ProductName}</Card.Title>
       <Card.Text>${item.price} </Card.Text>
+      <Rating />
       {/* <Button variant="primary" onClick={() => navigate(`/viewpdct/${item.id} `)} >View product</Button> */}
       <Button   style={{fontFamily:'cursive'}}  className='btn1  fw-bold    ' variant="outline-dark" onClick={() => navigate(`/viewpdct/${item.id} `)} >View product</Button>
     </Card.Body>

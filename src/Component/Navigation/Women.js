@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/esm/Container';
 import { context } from '../Context';
 import { useNavigate } from 'react-router-dom';
+import Rating from '../Rating';
 
 const Women = () => {
 
@@ -30,6 +31,7 @@ const Women = () => {
        <Card.Body>
          <Card.Title>{item.ProductName}</Card.Title>
          <Card.Text>${item.price} </Card.Text>
+         <Rating/>
          {/* <Button variant="primary" onClick={()=>navigator(`/viewpdct/${item.id}`)} >View product </Button> */}
          <Button  style={{fontFamily:'cursive'}}  className='btn1  fw-bold    ' variant="outline-dark"  onClick={()=>navigator(`/viewpdct/${item.id}`)} >View product</Button>
        </Card.Body>

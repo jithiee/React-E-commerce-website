@@ -44,7 +44,7 @@ const handleAddtocart = () => {
       {newCart.map((cart)=>
     
       <Card className='w-25  mt-5 d-inline-block shadow   ' key={cart.id}  >
-        <Card.Img className='image-container' variant="top" src={cart.image} />
+        <Card.Img  variant="top" src={cart.image} />
         <Card.Body>
           <Card.Title>{cart.ProductName}</Card.Title>
           <Card.Text>${cart.price} </Card.Text>
