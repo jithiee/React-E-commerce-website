@@ -164,6 +164,47 @@ input[name="star"] {
 }
 
 
+/* set direction to row-reverse so 5th star is at the end and ~ can be used to fill all sibling stars that precede last starred element*/
+
+.star-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+label:hover ~ label .star,
+svg.star:hover,
+input[name="star"]:focus ~ label .star,
+input[name="star"]:checked ~ label .star {
+  color: #d62a9d;
+}
+
+input[name="star"]:checked + label .star {
+  animation: starred 0.5s;
+}
+
+input[name="star"]:checked + label {
+  animation: scaleup 1s;
+}
+
+@keyframes scaleup {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(0.6);
+  }
+}
+
+@keyframes starred {
+  from {
+    color: #600040;
+  }
+  to {
+    color: #d62a9d;
+  }
+}
+
 
 
   
