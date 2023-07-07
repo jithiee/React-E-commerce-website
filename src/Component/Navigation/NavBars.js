@@ -44,7 +44,7 @@ const NavBars = () => {
                 <Nav.Link className="navers"  onClick={() => navigate("/women")}>WOMEN</Nav.Link>
                 <Nav.Link  className="navers"  onClick={() => navigate("/collection")}>COLLECTION</Nav.Link>
                 <Nav.Link  className="navers"  onClick={() => navigate("/about")}>ABOUT US</Nav.Link>
-                <Nav.Link  className="navers"                      >NEW OFFERS</Nav.Link>
+            
                
               </Nav>
 
