@@ -11,6 +11,7 @@ const GiShoppingCart = () => {
     const newArray = cart.filter((item) => item.id !== id);
     setCart(newArray);
   };
+
   const addQty = (id) => {
     setCart(
       cart.map((item) =>
@@ -18,6 +19,7 @@ const GiShoppingCart = () => {
       )
     );
   };
+
   const removeQty = (id) => {
     setCart(
       cart.map((item) =>
@@ -29,79 +31,97 @@ const GiShoppingCart = () => {
   };
 
   return (
-    <>
+    <div className="table-responsive" style={{
+      background: "linear-gradient(45deg, #fc0c64, #ff6a00)",
+      padding: "20px",
+      borderRadius: "10px",
+    }}>
       {cart.length > 0 ? (
-        cart.map((items) => (
-          <div
-            className="d-flex  m-1 shadow-lg m-4 "
-            style={{
-              alignItems: "center",
-              justifyContent: "space-between",
-              padding: "0 5% 0 5%",
-              borderBottom: "2px brown solid",
-            }}
-          >
-            <div style={{ padding: "2%" }}>
-              <img style={{ height: "200px" }} src={items.image} alt="fvafds" />
-            </div>
-            <div>
-              <h5 className="mt-3 fst-italic fw-bolder fs-3 ms-5">
-                {items.ProductName}
-              </h5>
-            </div>
-
-            <div style={{ cursor: "pointer" }}>
-              <FiMinus onClick={() => removeQty(items.id)} />
-
-              <input
-                className="mt-4 "
-                style={{ textAlign: "center", margin: "20px" }}
-                placeholder={items.Qty}
-                type="text"
-              />
-              <FiPlus onClick={() => addQty(items.id)} />
-            </div>
-            <p className="fw-bold mt-4">$ {items.Qty * items.price}</p>
-
-            <CDBBtn
-              style={{ fontSize: "15px", cursor: "pointer" }}
-              color="danger"
-              circle
-              outline
-              id={items.id}
-              onClick={() => removeItem(items.id)}
-            >
-              Remove
-            </CDBBtn>
-            <CDBBtn
-              style={{ fontSize: "15px", cursor: "pointer" }}
-              color="yellow"
-              circle
-              outline
-              id={items.id}
-              onClick={() => removeItem(items.id)}
-            >
-              Buy
-            </CDBBtn>
-          </div>
-        ))
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {cart.map((item) => (
+              <tr key={item.id}>
+                <td>
+                  <img
+                    style={{ height: "100px" }}
+                    src={item.image}
+                    alt="fvafds"
+                  />
+                </td>
+                <td>{item.ProductName}</td>
+                <td className="d-flex align-items-center"style={{color:'white',marginTop:'20%'}}>
+                  <FiMinus onClick={() => removeQty(item.id)} />
+                  <input
+                    className="form-control text-center "
+                    style={{ width: "50px" }}
+                    placeholder={item.Qty}
+                    type="text"
+                    readOnly
+                  />
+                  <FiPlus onClick={() => addQty(item.id)} />
+                </td>
+                <td>${item.Qty * item.price}</td>
+                <td>
+                  <div className="d-flex justify-content-end">
+                    <CDBBtn
+                      style={{ fontSize: "15px", cursor: "pointer",marginTop:'8%' }}
+                      color="red"
+                      circle
+                      outline
+                      onClick={() => removeItem(item.id)}
+                    >
+                      Remove
+                    </CDBBtn>
+                    <CDBBtn
+                      style={{
+                        fontSize: "15px",
+                        cursor: "pointer",
+                        marginLeft: "10px",
+                        backgroundColor:'yellow',
+                        marginTop:'5%'
+                        
+                      }}
+                      color="yellow"
+                      circle
+                      outline
+                      onClick={() => removeItem(item.id)}
+                    >
+                      Buy
+                    </CDBBtn>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       ) : (
-        <p style={{ fontSize: "100px" }}>
-          <BsEmojiFrown />
+        <div className="text-center">
+          <BsEmojiFrown size={100} />
           <p
             style={{
-              fontSize: "40px",
-              color: "red",
+              fontSize: "24px",
+              color: "white",
               fontWeight: "bold",
               fontFamily: "serif",
+              marginTop: "10px",
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
+             
             }}
           >
-            {" "}
-            Your Cart is Empty . . !
+            Your Cart is Empty!
           </p>
-        </p>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 
