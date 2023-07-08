@@ -1,15 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import { context } from '../Context';
 import { useNavigate } from 'react-router-dom';
 import Rating from '../Rating';
+import 'animate.css/animate.min.css';
 
 const Men = () => {
   const { state } = useContext(context);
   const datas = state.filter((item) => item.Gender === 'male');
   const navigate = useNavigate();
+  const [hoveredItem, setHoveredItem] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredItem(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
 
   return (
     <>
@@ -20,14 +30,35 @@ const Men = () => {
       />
       <Container className="pb-5">
         <div className="d-flex flex-wrap justify-content-center">
-          {datas.map((item) => (
-            <Card className="ms-2 mt-5 shadow" style={{ width: '16%', minWidth: '200px' }} key={item.id}>
-              <Card.Img className="men" variant="top" style={{ cursor: 'pointer' }} onClick={() => navigate(`/viewpdct/${item.id}`)} src={item.image} />
+          {datas.map((item, index) => (
+            <Card
+              className={`ms-2 mt-5 shadow animate__animated ${index % 2 === 0 ? 'animate__fadeInLeft' : 'animate__fadeInRight'}`}
+              style={{
+                width: '16%',
+                minWidth: '200px',
+                transition: 'transform 0.3s',
+                transform: hoveredItem === index ? 'scale(1.05)' : 'scale(1)',
+              }}
+              key={item.id}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Card.Img
+                className="men"
+                variant="top"
+                style={{ cursor: 'pointer' }}
+                onClick={() => navigate(`/viewpdct/${item.id}`)}
+                src={item.image}
+              />
               <Card.Body>
                 <Card.Title>{item.ProductName}</Card.Title>
                 <Card.Text>${item.price}</Card.Text>
                 <Rating />
-                <Button className="btn1 fw-bold" variant="outline-dark" onClick={() => navigate(`/viewpdct/${item.id}`)}>
+                <Button
+                  className="btn1 fw-bold"
+                  variant="outline-dark"
+                  onClick={() => navigate(`/viewpdct/${item.id}`)}
+                >
                   View product
                 </Button>
               </Card.Body>

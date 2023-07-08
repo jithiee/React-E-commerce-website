@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import { context } from '../Context';
 import { useNavigate } from 'react-router-dom';
 import Rating from '../Rating';
+import 'animate.css/animate.min.css';
 
 const Women = () => {
   const { state } = useContext(context);
@@ -21,8 +22,12 @@ const Women = () => {
 
       <Container className="pb-5">
         <div className="d-flex flex-wrap justify-content-center">
-          {datas.map((item) => (
-            <Card className="ms-2 mt-5 shadow" style={{ width: '16%', minWidth: '200px' }} key={item.id}>
+          {datas.map((item, index) => (
+            <Card
+              className={`ms-2 mt-5 shadow animate__animated ${index % 2 === 0 ? 'animate__fadeInLeft' : 'animate__fadeInRight'}`}
+              style={{ width: '16%', minWidth: '200px' }}
+              key={item.id}
+            >
               <Card.Img
                 className="menadd"
                 variant="top"

@@ -31,19 +31,22 @@ const GiShoppingCart = () => {
   };
 
   return (
-    <div className="table-responsive" style={{
-      background: "linear-gradient(45deg, #fc0c64, #ff6a00)",
-      padding: "20px",
-      borderRadius: "10px",
-    }}>
+    <div
+      className="table-responsive"
+      style={{
+        background: "linear-gradient(45deg, #fff8d9, #fddfdb)",
+        padding: "20px",
+        borderRadius: "10px",
+      }}
+    >
       {cart.length > 0 ? (
         <table className="table table-striped">
           <thead>
             <tr>
               <th></th>
-              <th>Product Name</th>
+              <th className="text-center">Product Name</th>
               <th>Quantity</th>
-              <th>Price</th>
+              <th className="text-center">Price</th>
               <th></th>
             </tr>
           </thead>
@@ -57,23 +60,25 @@ const GiShoppingCart = () => {
                     alt="fvafds"
                   />
                 </td>
-                <td>{item.ProductName}</td>
-                <td className="d-flex align-items-center"style={{color:'white',marginTop:'20%'}}>
-                  <FiMinus onClick={() => removeQty(item.id)} />
-                  <input
-                    className="form-control text-center "
-                    style={{ width: "50px" }}
-                    placeholder={item.Qty}
-                    type="text"
-                    readOnly
-                  />
-                  <FiPlus onClick={() => addQty(item.id)} />
+                <td className="text-center">{item.ProductName}</td>
+                <td className="align-middle">
+                  <div className="d-flex align-items-center">
+                    <FiMinus onClick={() => removeQty(item.id)} />
+                    <input
+                      className="form-control text-center ml-2 mr-2"
+                      style={{ width: "50px" }}
+                      placeholder={item.Qty}
+                      type="text"
+                      readOnly
+                    />
+                    <FiPlus onClick={() => addQty(item.id)} />
+                  </div>
                 </td>
-                <td>${item.Qty * item.price}</td>
+                <td className="text-center">${item.Qty * item.price}</td>
                 <td>
                   <div className="d-flex justify-content-end">
                     <CDBBtn
-                      style={{ fontSize: "15px", cursor: "pointer",marginTop:'8%' }}
+                      style={{ fontSize: "15px", cursor: "pointer", marginTop: '8%' }}
                       color="red"
                       circle
                       outline
@@ -86,9 +91,9 @@ const GiShoppingCart = () => {
                         fontSize: "15px",
                         cursor: "pointer",
                         marginLeft: "10px",
-                        backgroundColor:'yellow',
-                        marginTop:'5%'
-                        
+                        backgroundColor: 'yellow',
+                        marginTop: '5%'
+
                       }}
                       color="yellow"
                       circle
@@ -114,7 +119,7 @@ const GiShoppingCart = () => {
               fontFamily: "serif",
               marginTop: "10px",
               textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
-             
+
             }}
           >
             Your Cart is Empty!
