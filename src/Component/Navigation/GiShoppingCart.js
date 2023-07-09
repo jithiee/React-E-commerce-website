@@ -3,6 +3,7 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import { context } from "../Context";
 import { CDBBtn } from "cdbreact";
 import { BsEmojiFrown } from "react-icons/bs";
+import 'animate.css/animate.min.css';
 
 const GiShoppingCart = () => {
   const { cart, setCart } = useContext(context);
@@ -32,7 +33,7 @@ const GiShoppingCart = () => {
 
   return (
     <div
-      className="table-responsive"
+      className="table-responsive animate__animated animate__fadeIn"
       style={{
         background: "linear-gradient(45deg, #fff8d9, #fddfdb)",
         padding: "20px",
@@ -40,7 +41,7 @@ const GiShoppingCart = () => {
       }}
     >
       {cart.length > 0 ? (
-        <table className="table table-striped  " >
+        <table className="table table-striped animate__animated animate__fadeIn">
           <thead>
             <tr>
               <th></th>
@@ -52,7 +53,7 @@ const GiShoppingCart = () => {
           </thead>
           <tbody>
             {cart.map((item) => (
-              <tr key={item.id}>
+              <tr key={item.id} className="animate__animated animate__fadeIn">
                 <td>
                   <img
                     style={{ height: "100px" }}
@@ -60,13 +61,13 @@ const GiShoppingCart = () => {
                     alt="fvafds"
                   />
                 </td>
-                <td className="text-center">{item.ProductName}</td>
+                <td  style={{fontSize:'130%', paddingTop:'40px',fontWeight:'bold'}} className="text-center">{item.ProductName}</td>
                 <td className="align-middle">
                   <div className="d-flex align-items-center">
                     <FiMinus onClick={() => removeQty(item.id)} />
-                    <input
+                    <input 
                       className="form-control text-center ml-2 mr-2"
-                      style={{ width: "50px" }}
+                      style={{ width: "50px",fontWeight:'bold'}}
                       placeholder={item.Qty}
                       type="text"
                       readOnly
@@ -74,12 +75,11 @@ const GiShoppingCart = () => {
                     <FiPlus onClick={() => addQty(item.id)} />
                   </div>
                 </td>
-                <td className="text-center">${item.Qty * item.price}</td>
+                <td style={{fontSize:'130%', paddingTop:'40px',fontWeight:'bold'}} className="text-center ">${item.Qty * item.price}</td>
                 <td>
                   <div className="d-flex justify-content-end me-5">
                     <CDBBtn
                       style={{ fontSize: "15px", cursor: "pointer", marginTop: '8%',color:'red' }}
-                   
                       circle
                       outline
                       onClick={() => removeItem(item.id)}
@@ -93,7 +93,6 @@ const GiShoppingCart = () => {
                         marginLeft: "10px",
                         backgroundColor: 'yellow',
                         marginTop: '5%'
-
                       }}
                       color="yellow"
                       circle
@@ -109,7 +108,7 @@ const GiShoppingCart = () => {
           </tbody>
         </table>
       ) : (
-        <div className="text-center">
+        <div className="text-center animate__animated animate__fadeIn">
           <BsEmojiFrown size={100} />
           <p
             style={{
@@ -119,7 +118,6 @@ const GiShoppingCart = () => {
               fontFamily: "serif",
               marginTop: "10px",
               textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)",
-
             }}
           >
             Your Cart is Empty!
