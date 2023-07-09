@@ -40,12 +40,12 @@ const GiShoppingCart = () => {
       }}
     >
       {cart.length > 0 ? (
-        <table className="table table-striped">
+        <table className="table table-striped  " >
           <thead>
             <tr>
               <th></th>
-              <th className="text-center">Product Name</th>
-              <th>Quantity</th>
+              <th className="text-center ">Product Name</th>
+              <th className="">Quantity</th>
               <th className="text-center">Price</th>
               <th></th>
             </tr>
@@ -76,10 +76,10 @@ const GiShoppingCart = () => {
                 </td>
                 <td className="text-center">${item.Qty * item.price}</td>
                 <td>
-                  <div className="d-flex justify-content-end">
+                  <div className="d-flex justify-content-end me-5">
                     <CDBBtn
-                      style={{ fontSize: "15px", cursor: "pointer", marginTop: '8%' }}
-                      color="red"
+                      style={{ fontSize: "15px", cursor: "pointer", marginTop: '8%',color:'red' }}
+                   
                       circle
                       outline
                       onClick={() => removeItem(item.id)}

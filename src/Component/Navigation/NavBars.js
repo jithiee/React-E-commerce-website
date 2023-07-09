@@ -10,6 +10,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { CDBBtn } from "cdbreact";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { context } from "../Context";
+import "animate.css/animate.min.css";
 
 const NavBars = () => {
   const navigate = useNavigate();
@@ -17,17 +18,16 @@ const NavBars = () => {
 
   const SearchHandler = (e) => {
     setSearch(e.target.value.toLowerCase());
-
     navigate("/search");
   };
 
   return (
     <>
-      <div className="navbaar   " style={{ position: "sticky",backgroundColor:' #F8EAED' }}>
+      <div className="navbaar animate__animated animate__fadeIn" style={{ position: "sticky",backgroundColor:' #F8EAED' }}>
         <Navbar  expand="lg">
           <Container>
             <Navbar.Brand
-              className="logo icon fw-bold fs-2   "
+              className="logo icon fw-bold fs-2   animate__animated animate__bounce"
               style={{ cursor: "pointer" }}
               onClick={() => navigate("/")}
             >
@@ -40,18 +40,15 @@ const NavBars = () => {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link  className="navers"  onClick={() => navigate("/men") }  >MEN</Nav.Link>
-                <Nav.Link className="navers"  onClick={() => navigate("/women")}>WOMEN</Nav.Link>
-                <Nav.Link  className="navers"  onClick={() => navigate("/collection")}>COLLECTION</Nav.Link>
-                <Nav.Link  className="navers"  onClick={() => navigate("/about")}>ABOUT US</Nav.Link>
-            
-               
+                <Nav.Link  className="navers animate__animated animate__fadeInLeft" onClick={() => navigate("/men")}>MEN</Nav.Link>
+                <Nav.Link className="navers animate__animated animate__fadeInLeft" onClick={() => navigate("/women")}>WOMEN</Nav.Link>
+                <Nav.Link className="navers animate__animated animate__fadeInLeft" onClick={() => navigate("/collection")}>COLLECTION</Nav.Link>
+                <Nav.Link className="navers animate__animated animate__fadeInLeft" onClick={() => navigate("/about")}>ABOUT US</Nav.Link>
               </Nav>
 
               <Nav style={{ display: "flex", gap: "30px" }}>
-                <Form className=" d-flex  p-4 ">
+                <Form className="d-flex p-4 animate__animated animate__fadeInRight">
                   <Form.Control
-                  
                     type="search"
                     placeholder="Search brands"
                     className="place me-2"
@@ -60,39 +57,41 @@ const NavBars = () => {
                   />
 
                   <NavLink exact to="/search">
-                    {" "}
                     <Button className="srch" variant="outline-dark">Search</Button>
                   </NavLink>
                 </Form>
               </Nav>
 
-              <div style={{ display: "flex", gap: "20px" }}>
+              <div style={{ display: "flex", gap: "20px" }} className="animate__animated animate__fadeIn">
                 <Nav.Link
-                  className="cart  fs-2 "
+                  className="cart  fs-2 animate__animated animate__fadeIn"
                   onClick={() => navigate("/cart")}
                 >
                   <GiShoppingCart />
                 </Nav.Link>
 
                 <Nav.Link
-                  className="user fs-2 ms-3"
+                  className="user fs-2 ms-3 animate__animated animate__fadeIn"
                   onClick={() => navigate("/imuser")}
                 >
                   <ImUser />
                 </Nav.Link>
               </div>
-              <div className="d-flex mt-2 " style={{ gap: "10px" }}>
+              <div className="d-flex mt-2 animate__animated animate__fadeIn" style={{ gap: "10px" }}>
                 <CDBBtn
-                  className="ms-3"
+                  className="ms-3 animate__animated animate__fadeIn"
                   color="primary"
-                  onClick={() => navigate("/singin")}
+                  onClick={() => navigate("/signup")}
                 >
                   SignUp
                 </CDBBtn>
-                <CDBBtn color="primary" onClick={() => navigate("/login")}>
+                <CDBBtn
+                  color="primary"
+                  onClick={() => navigate("/logout")}
+                  className="animate__animated animate__fadeIn"
+                >
                   LogOut
                 </CDBBtn>
-
               </div>
             </Navbar.Collapse>
           </Container>
