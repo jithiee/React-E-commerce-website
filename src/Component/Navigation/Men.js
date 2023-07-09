@@ -21,10 +21,12 @@ const Men = () => {
     setHoveredItem(null);
   };
 
+  const bannerImageAnimation = 'animate__zoomIn'; // Change animation effect here
+
   return (
     <>
       <img
-        className="d-block w-100"
+        className={`d-block w-100 animate__animated ${bannerImageAnimation}`}
         src="https://test-redfynd-django-admin.s3.amazonaws.com/media/images/be_effortless_2.jpg"
         alt="First slide"
       />
@@ -32,7 +34,9 @@ const Men = () => {
         <div className="d-flex flex-wrap justify-content-center">
           {datas.map((item, index) => (
             <Card
-              className={`ms-2 mt-5 shadow animate__animated ${index % 2 === 0 ? 'animate__fadeInLeft' : 'animate__fadeInRight'}`}
+              className={`ms-2 mt-5 shadow animate__animated ${
+                index % 2 === 0 ? 'animate__fadeInLeft' : 'animate__fadeInRight'
+              }`}
               style={{
                 width: '16%',
                 minWidth: '200px',

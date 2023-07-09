@@ -12,10 +12,12 @@ const Women = () => {
   const datas = state.filter((item) => item.Gender === 'female');
   const navigator = useNavigate();
 
+  const bannerImageAnimation = 'animate__animated animate__slideInDown'; // Change animation effect here
+
   return (
     <>
       <img
-        className="d-block w-100"
+        className={`d-block w-100 ${bannerImageAnimation}`}
         src="https://test-redfynd-django-admin.s3.amazonaws.com/media/images/be_effortless.jpg"
         alt="dfe"
       />
