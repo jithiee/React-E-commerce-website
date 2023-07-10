@@ -81,13 +81,13 @@ const NavBars = () => {
                 <CDBBtn
                   className="ms-3 animate__animated animate__fadeIn"
                   color="primary"
-                  onClick={() => navigate("/signup")}
+                  onClick={() => navigate("/singin")}
                 >
                   SignUp
                 </CDBBtn>
                 <CDBBtn
                   color="primary"
-                  onClick={() => navigate("/logout")}
+                  onClick={() => navigate("/login")}
                   className="animate__animated animate__fadeIn"
                 >
                   LogOut
