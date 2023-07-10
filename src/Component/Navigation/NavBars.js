@@ -56,7 +56,7 @@ const NavBars = () => {
                     onChange={SearchHandler}
                   />
 
-                  <NavLink exact to="/search">
+                  <NavLink exact to="">
                     <Button className="srch" variant="outline-dark">Search</Button>
                   </NavLink>
                 </Form>
