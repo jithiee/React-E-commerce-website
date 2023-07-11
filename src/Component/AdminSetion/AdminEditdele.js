@@ -1,62 +1,111 @@
-import Button from "react-bootstrap/Button";
-import React, { useContext } from "react";
-import Container from "react-bootstrap/esm/Container";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { Container, Table, Button, Modal } from "react-bootstrap";
 import { context } from "../Context";
-import Card from "react-bootstrap/Card";
-import { NavLink } from "react-router-dom";
 
-
-const AdminEditdele = () => {
+const AdminEditDelete = () => {
   const { state, setState } = useContext(context);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [selectedItemId, setSelectedItemId] = useState(null);
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
 
-  const onDelete = (id) => {
-    const filteredDeleter = state.filter((delt) => delt.id !== id);
+  const onDelete = () => {
+    const filteredDeleter = state.filter((item) => item.id !== selectedItemId);
     setState(filteredDeleter);
-    alert("conform delete");
+    setShowDeleteModal(false);
+    alert("Item deleted successfully!");
+  };
 
+  const openDeleteModal = (id) => {
+    setSelectedItemId(id);
+    setShowDeleteModal(true);
+  };
+
+  const closeDeleteModal = () => {
+    setShowDeleteModal(false);
+  };
+
+  const openImageModal = (image) => {
+    setSelectedImage(image);
+    setShowImageModal(true);
+  };
+
+  const closeImageModal = () => {
+    setShowImageModal(false);
   };
 
   return (
-    <>
-      <div
-        className="bg-black d-flex pb-5  g-3 "
-      
-      >
-        <Container>
-          {state.map((item) => (
-            <Card
-              className="  w-25  mt-5 d-inline-block shadow  "
-              key={item.id}
-            >
-              <Card.Img className="menadd " variant="top" src={item.image} />
-              <Card.Body>
-                <Card.Title>{item.ProductName}</Card.Title>
-                <Card.Text>${item.price} </Card.Text>
-                <div>
-                  <Button
-                    className="bg-danger"
-                    variant="primary"
-                    onClick={() => onDelete(item.id)}
-                  >
-                    DELETE
-                  </Button>
-                  <NavLink
-                    exact
-                    to= {`/admin/edit/${item.id}`}
-                    activeClassName="activeClicked"
-                  >
-                    <Button className="bg-info" variant="primary">
-                      EDITING{" "}
+    <div className="bg-black py-5">
+      <Container>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {state.map((item) => (
+              <tr key={item.id}>
+                <td>
+                  <img
+                    src={item.image}
+                    alt={item.ProductName}
+                    style={{ width: "50px", height: "50px", cursor: "pointer" }}
+                    onClick={() => openImageModal(item.image)}
+                  />
+                </td>
+                <td>{item.ProductName}</td>
+                <td>${item.price}</td>
+                <td>
+                  <div className="d-flex justify-content-between">
+                    <Button
+                      className="bg-danger"
+                      variant="primary"
+                      onClick={() => openDeleteModal(item.id)}
+                    >
+                      Delete
                     </Button>
-                  </NavLink>
-                </div>
-              </Card.Body>
-            </Card>
-          ))}
-        </Container>
-      </div>
-    </>
+                    <Link to={`/admin/edit/${item.id}`}>
+                      <Button className="bg-info" variant="primary">
+                        Edit
+                      </Button>
+                    </Link>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Container>
+
+      {/* Delete Modal */}
+      <Modal show={showDeleteModal} onHide={closeDeleteModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Delete</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this item?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeDeleteModal}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={onDelete}>
+            Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      {/* Image Modal */}
+      <Modal show={showImageModal} onHide={closeImageModal}>
+        <Modal.Body className="d-flex justify-content-center">
+          <img src={selectedImage} alt="Selected Product" style={{ maxHeight: "80vh", maxWidth: "80vw" }} />
+        </Modal.Body>
+      </Modal>
+    </div>
   );
 };
 
-export default AdminEditdele;
+export default AdminEditDelete;

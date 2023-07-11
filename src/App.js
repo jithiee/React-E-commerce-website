@@ -101,7 +101,7 @@ function App() {
             </Route>
           </Routes>
 
-          {admin ? null : <Footer />}
+          {admin ? null : <Footer/>}
         </context.Provider>
       </>
     </div>

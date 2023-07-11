@@ -17,12 +17,12 @@ import { Link } from "react-router-dom";
 const  Footer=()=>{
 
   return (
-    <div className="footer" >
+    <div className="footer " >
       <MDBFooter
         bgColor="dark " 
         className="text-center text-lg-start text-muted p-4  "
       >
-        <section className="p-2" >
+        <section className="p-2" style={{color:"white"}} >
           <MDBContainer className="text-center text-md-start mt-2">
             <MDBRow className="mt-3">
               <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
@@ -40,7 +40,7 @@ const  Footer=()=>{
                   Customer Service
                 </h6>
                 <p>
-                  <a href="#!" className="text-reset">
+                  <a href="#!" className="text-reset ">
                     Contact Us
                   </a>
                 </p>
@@ -93,7 +93,7 @@ const  Footer=()=>{
                 </p>
                 <p>
                   <MDBIcon icon="envelope" className="me-3" />
-                  jithin@369.com
+                  plashoe@gmail.com
                 </p>
                 <p>
                   <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
@@ -131,7 +131,7 @@ const  Footer=()=>{
       </CDBContainer>
         </section>
          
-        <div className="text-center p-2" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}> 
+        <div className="text-center p-2" style={{ backgroundColor: "rgba(0, 0, 0, 0.05)",color:'white' }}> 
        <div>  © 2023 Copyright:</div> 
           <a className="text-reset fw-bold" href="https://mdbootstrap.com/"> <br></br>
               Shoe Store | Powered by Shoe Store
