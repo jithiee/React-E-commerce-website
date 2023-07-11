@@ -58,7 +58,7 @@ const AdminEditDelete = () => {
                     onClick={() => openImageModal(item.image)}
                   />
                 </td>
-                <td>{item.ProductName}</td>
+                <td style={{fontWeight:'bold'}}>{item.ProductName}</td>
                 <td>${item.price}</td>
                 <td>
                   <div className="d-flex justify-content-between">
@@ -82,7 +82,7 @@ const AdminEditDelete = () => {
         </Table>
       </Container>
 
-      {/* Delete Modal */}
+      {/*========================= Delete Modal ====================================*/}
       <Modal show={showDeleteModal} onHide={closeDeleteModal}>
         <Modal.Header closeButton>
           <Modal.Title>Confirm Delete</Modal.Title>
@@ -98,7 +98,7 @@ const AdminEditDelete = () => {
         </Modal.Footer>
       </Modal>
 
-      {/* Image Modal */}
+      {/* ======================Image Modal ================================*/}
       <Modal show={showImageModal} onHide={closeImageModal}>
         <Modal.Body className="d-flex justify-content-center">
           <img src={selectedImage} alt="Selected Product" style={{ maxHeight: "80vh", maxWidth: "80vw" }} />
