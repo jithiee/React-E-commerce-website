@@ -24,6 +24,7 @@ const Singnin = () => {
       { userFirstName, userLastName, userPassword, userEmail },
     ]);
     navigate("/login");
+    
 
     const item = {
       id: Date.now(),

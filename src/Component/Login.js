@@ -84,7 +84,7 @@ const Login = () => {
                     style={{ color: "blue" }}
                     onClick={() => navigate("/singin")}
                   >
-                    SingnUp
+                    Sign Up
                   </Nav.Link>
                 </label>
               </nav>
